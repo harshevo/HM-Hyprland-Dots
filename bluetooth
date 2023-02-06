@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ bluetoothctl connect 18:95:52:61:2E:11
