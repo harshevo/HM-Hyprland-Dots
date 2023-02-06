@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Kill already running process
+_ps=(waybar mako polkit-kde-authentication-agent-1 eww)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Polkit agent
+/usr/lib/polkit-kde-authentication-agent-1 &
+
+# Lauch statusbar (waybar)
+waybar &
+
+# Ensure Proper Cursor
+hyprctl setcursor Adwaita 24 &
+
+# Set Wallpaper
+hyprpaper &
+
+
+
+# Apply themes
+bash ~/.config/hypr/scripts/gtkthemes &
