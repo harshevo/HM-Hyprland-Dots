@@ -1,5 +1,5 @@
 # HM-Hyprland-Dots
-cutom 
+custom 
 
 packages used
 
